@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlassFlow CRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              border: "var(--border-color)",
+              background: "var(--bg-body)",
+              surface: "var(--bg-panel)",
+              accent: "var(--color-accent)",
+              "accent-foreground": "var(--color-accent-foreground)",
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-body: #FFFFFF;
+        --bg-panel: #FFFFFF;
+        --border-color: rgba(0, 0, 0, 0.08);
+        --text-main: #111111;
+        --text-muted: #6B7280;
+        
+        /* Default Accent (Black) */
+        --color-accent: #111111;
+        --color-accent-foreground: #FFFFFF;
+      }
+
+      .dark {
+        --bg-body: #09090b; /* Zinc 950 */
+        --bg-panel: #18181b; /* Zinc 900 */
+        --border-color: rgba(255, 255, 255, 0.08);
+        --text-main: #FAFAFA;
+        --text-muted: #A1A1AA;
+        
+        /* Default Accent Dark (White) */
+        --color-accent: #FFFFFF;
+        --color-accent-foreground: #000000;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      /* Minimal Scrollbar - Light Mode */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1); 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.2); 
+      }
+      
+      .dark ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1); 
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2); 
+      }
+
+      /* Subtle Utilities */
+      .border-subtle {
+        border: 1px solid var(--border-color);
+      }
+      
+      .bg-surface {
+        background-color: var(--bg-panel);
+      }
+
+      .text-secondary {
+        color: var(--text-muted);
+      }
+
+      .hover-surface:hover {
+        background-color: rgba(0,0,0,0.02);
+      }
+      .dark .hover-surface:hover {
+        background-color: rgba(255,255,255,0.05);
+      }
+      
+      /* Accent Utilities */
+      .bg-accent {
+        background-color: var(--color-accent);
+        color: var(--color-accent-foreground);
+      }
+      .text-accent {
+        color: var(--color-accent);
+      }
+      .border-accent {
+        border-color: var(--color-accent);
+      }
+
+      /* Transitions */
+      .fade-in {
+        animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
